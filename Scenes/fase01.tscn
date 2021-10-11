@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/cenario.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/porta.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/chave.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/teto.png" type="Texture" id=5]
+
+[node name="fase01" type="Node2D"]
+
+[node name="cenario" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="porta" parent="." instance=ExtResource( 2 )]
+
+[node name="porta2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 128.387, 354.058 )
+
+[node name="chave" parent="." instance=ExtResource( 3 )]
+position = Vector2( 462.976, 636.348 )
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176.055, 540.213 )
+vel = 200
+
+[node name="paredes" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="paredes"]
+polygon = PoolVector2Array( 146.5, 373.5, 488.565, 374.493, 488.565, 662.286, 200.773, 660.164, 200.773, 614.556, 104.253, 613.495, 103.546, 565.412, 56.8769, 565.058, 57, 374, 111, 373.5, 110.568, 228.928, 56.1206, 229.281, 57.5349, 85.7386, 111.42, 85.9642, 111.89, 0.863123, -0.0759506, 0.53474, 6.50821, 719.599, 539.7, 718.946, 544.517, -5.2964, 144.26, 0.529413, 145.216, 86.0922, 201.078, 86.0922, 200.724, 229.635, 145.327, 228.682 )
+
+[node name="teto" type="Sprite" parent="."]
+position = Vector2( 134.768, -6.69498 )
+scale = Vector2( 1.01001, 1 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="teto2" type="Sprite" parent="."]
+position = Vector2( 135.057, 283.55 )
+z_index = 1
+texture = ExtResource( 5 )
